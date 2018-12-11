@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${film.titre}">titre</title>
+</head>
+<body style="background-color: #424242; font-family: 'Lobster', cursive;">
+<div class="container"  style="margin: 0 auto; width: 1000px; background-color: #fff;">
+<div class="row" style="background-color: #9C27B0; border-bottom: solid 5px #4A148C;">
+        <h1 th:text="${film.titre}" style=" padding: 20px; color: #fff; ">titre du film</h1>
+</div>
+<div class="row">
+    <div class="col-4">
+<img th:src="'/affiches/'+${film.getAffiche()}" height="288px" width="216px" style="margin-left: 50px; margin-top: 50px;">
+    </div>
+    <div class="col-7">
+<p style="margin-top: 50px;"><span style=" font-size: 30px"> Résumé : </span><span th:text="${film.getResume()}"></span></p>
+        <h2>Note : <span th:text="${film.getNotation()}">4.5</span></h2>
+    </div>
+</div>
+<div class="row">
+    <ul>
+        <li th:each="role:${film.getRole()}"><img th:src="'/image/'+${role.getPersonne().getPhotoPath()}" height="75"
+                                                  width="75"><a th:text="${role.toString()}"
+                                                                th:href="@{'/acteur/'+${role.getPersonne().getPhotoPath()}}"></a>
+        </li>
+    </ul>
+</div>
+</div>
+</body>
+</html>

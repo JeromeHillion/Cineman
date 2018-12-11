@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!--declaration d'un espace de nommage th dans lequ'elle est stocké thymeleaf-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:#FFFFFF">
+<!--on remplace le contenu de la balise H1 avec le contenu de th attention ça remplace tout-->
+<h1 th:text="'bonjour '+${nom}">Hello World</h1>
+<!--on va afficher les film ici grace a l'objet filmsDao-->
+<ul>
+    <li th:each="jilm:${films}"><a th:text="${jilm.getTitre()}"th:href="@{'/film/'+${jilm.getId()}}"></a></li>
+</ul>
+</body>
+</html>
