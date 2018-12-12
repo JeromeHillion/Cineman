@@ -10,7 +10,7 @@ public class Film {
     private String affiche;
     private String resume;
     private Personne realisateur;
-    private List<Role> role;
+    private List<Role> roles;
 
     public Film(Integer id,String titre, Double notation, String affiche, String resume, Personne realisateur) {
         this.id=id;
@@ -76,12 +76,12 @@ public class Film {
         this.affiche = affiche;
     }
 
-    public List<Role> getRole() {
-        return role;
+    public List<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(List<Role> role) {
-        this.role = role;
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 
     @Override

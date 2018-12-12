@@ -8,14 +8,14 @@ public class Personne {
     private String prenom;
     private Integer naissance;
     private String photoPath;
-    public List<Role> role;
+    public List<Role> roles;
 
-    public List<Role> getRole() {
-        return role;
+    public List<Role> getRoles() {
+        return roles;
     }
 
-    public void setRole(List<Role> role) {
-        this.role = role;
+    public void setRole(List<Role> roles) {
+        this.roles = roles;
     }
 
     public Personne(String nom, String prenom, Integer naissance, String photoPath) {
@@ -67,7 +67,7 @@ public class Personne {
                 ", prenom='" + prenom + '\'' +
                 ", naissance=" + naissance +
                 ", photoPath='" + photoPath + '\'' +
-                ", role=" + role +
+                ", roles =" + roles +
                 '}';
     }
 
