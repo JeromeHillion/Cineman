@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <!--declaration d'un espace de nommage th dans lequ'elle est stocké thymeleaf-->
-<link rel="stylesheet" href="/webjars/Semantic-UI/2.4.1/semantic.css">
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+<link rel="stylesheet" href="/static/css/stylecineman.css" th:href="@{/css/stylecineman.css}">
+<link rel="stylesheet" href="/static/css/carrousel.css" th:href="@{/css/carrousel.css}">
+<link rel="stylesheet" href="/webjars/Semantic-UI/2.4.1/semantic.css">
+<meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body style="background-color:#FFFFFF">
+<body>
+<div class="ui menu cinememu ">
+    <div class="header item"><i class="play circle outline icon"></i>CINEMAN </div>
+    <a class="item active cinenav"><i class="home icon"></i>Home</a>
+    <!--/*@thymesVar id="id" type=""*/-->
+    <a class="item cinenav"  th:href="@{'/film'}"><i class="film icon"></i>Films </a>
+    <a class="item cinenav"><i class="users icon"></i>Acteurs</a>
+</div>
+
+    <!--<img src="../static/affiches/Delphi-Lux-cinema-1-1024x682.jpg"  alt="">-->
+<div class="container_general">
+    <div class="container">
+<div id="carrousel">
+    <ul th:each="film:${films}">
+        <li><img th:src="'/affiches/'+${film.getAffiche()}" height="288px" width="216px"></li>
+    </ul>
+</div>
+    </div>
+
+<hr>
+  <!--  <div class="ui equal width grid" th:  th:each="film:${films}">
+        <div class="column" th:text="${film.titre}">
+        &lt;!&ndash;<cite th:text="${film.resume}"></cite>&ndash;&gt;
+        </div>-->
+    </div>
+</div>
 <!--on remplace le contenu de la balise H1 avec le contenu de th attention ça remplace tout-->
-<h1 th:text="'bonjour '+${nom}">Hello World</h1>
+<!--<h1 th:text="'Bienvenu '+${annonce}">Hello World</h1>-->
 <!--on va afficher les film ici grace a l'objet filmsDao-->
-<ul>
-    <li th:each="film:${films}"><a th:text="${film.getTitre()}"th:href="@{'/film/'+${film.getId()}}"></a></li>
-</ul>
+<script type="text/javascript" src="webjars/jquery/3.3.1-1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/carrousel.js" th:src="@{/js/carrousel.js}"></script>
 </body>
 </html>

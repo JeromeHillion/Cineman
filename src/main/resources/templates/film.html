@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<title>Title</title>
+<head>
+    <link rel="stylesheet" href="/static/css/stylecineman.css" th:href="@{/css/stylecineman.css}">
+    <link rel="stylesheet" href="/webjars/Semantic-UI/2.4.1/semantic.css">
+</head>
+<body>
+<div class="ui menu cinememu ">
+    <div class="header item"><i class="play circle outline icon"></i>CINEMAN</div>
+    <a class="item  cinenav" th:href="@{'/'}"><i class="home icon"></i>Home</a>
+    <!--/*@thymesVar id="id" type=""*/-->
+    <a class="item active cinenav" th:href="@{'/film'}"><i class="film icon"></i>Films </a>
+    <a class="item cinenav"><i class="users icon"></i>Acteurs</a>
+</div>
+<div class="ui two column centered grid">
+    <div class="column">
+<div class="ui list">
+    <div th:each="film:${films}" class="item">
+        <img class="ui avatar image" th:src="'/affiches/'+${film.getAffiche()}" height="288px" width="216px">
+        <div class="content">
+            <a class="header" th:text="${film.titre}">Rachel</a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>
+<!--
+<h1 th:text="${film.titre}">titre du film</h1>-->
+

@@ -1,0 +1,39 @@
+body{
+  background-color: darkgrey !important;
+}
+
+#carrousel{
+
+    position:relative;
+    height:290px;
+    width:700px;
+    margin:auto;
+
+}
+#carrousel ul li{
+
+    position:absolute;
+    top:0;
+    left:230px;
+    list-style: none;
+
+}
+#carrousel img{
+    margin: 0 auto;
+}
+.container{
+    background-color: #00ACC1;
+    width: 800px;
+    margin: 0 auto;
+}
+.container_general{
+    width: 800px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    max-height: 100%;
+}
+.spacer{
+    margin-left: 240px;
+}
+
+

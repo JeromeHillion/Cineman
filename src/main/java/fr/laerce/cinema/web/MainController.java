@@ -22,10 +22,18 @@ public class MainController {
     @GetMapping("/")
     public String main(Model M) {
         //on ajoute a l'objet model la clef nom et jerome_gide
-        M.addAttribute("nom", "jerome_gide");
+        M.addAttribute("annonce", "sur le site du Cineman");
         M.addAttribute("films", dataModel.getFilms());
         //on return la chaine string index de façon à ouvrir index.html
         return "index";
+    }
+
+    @GetMapping("/film")
+        /**On céer notre modèle pour page film**/
+        public String film(Model model){
+            model.addAttribute("films", dataModel.getFilms());
+            /** On retourne la chaine string film de façon à ouvrir**/
+            return "film";
     }
 
     @GetMapping("/film/{id}")

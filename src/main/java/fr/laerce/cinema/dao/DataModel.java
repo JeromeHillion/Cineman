@@ -119,7 +119,7 @@ public class DataModel {
                 personnes.get(21)));
         films.add(new Film(5, "E.T. l'extra-terrestre",
                 4.2,
-                "f0005.jpg",
+                "et.jpg",
                 "Une soucoupe volante atterrit en pleine nuit près de Los Angeles. Quelques extraterrestres, " +
                         "envoyés sur Terre en mission d'exploration botanique, sortent de l'engin, mais un des leurs " +
                         "s'aventure au-delà de la clairière où se trouve la navette. Celui-ci se dirige alors vers " +

@@ -1,0 +1,11 @@
+body, html{
+    font-size: 20px;
+font-family: "Roboto",  sans-serif;
+}
+.cinenav{
+    color: #00ACC1 !important;
+}
+.cinememu{
+    background-color: #E0E0E0 !important;
+}
+
